@@ -1,0 +1,22 @@
+{
+  "formula_version": "SKU-PRICING-R1",
+  "mode": "same_base_fixed_coupon",
+  "currency": "CNY",
+  "scenario_id": "EXAMPLE-ONLY",
+  "sales_quantity": "1",
+  "procurement_validation": "passed_for_example",
+  "goods_total": "5.00",
+  "supplier_shipping": "3.00",
+  "other_purchase_cost": "0.00",
+  "selling_fixed_cost": "0.00",
+  "after_sale_reserve": "0.00",
+  "fee_items": [
+    {"name": "example_fee", "base": "merchant_gross_income", "rate": "0.05"}
+  ],
+  "merchant_fixed_coupon": "0.00",
+  "target_contribution": "1.00",
+  "target_margin": null,
+  "input_evidence_status": "example_assumptions",
+  "fee_rounding": "unrounded_estimate",
+  "candidate_list_price": "9.90"
+}
