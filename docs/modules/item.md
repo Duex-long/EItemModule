@@ -53,6 +53,7 @@ interface / 文件：`ISkuPricingStrategy` / `src/item/pricing/i-sku-pricing-str
 
 扩展文档 / 流程图 / 类图位置：
 
+- `docs/item-module-design.md`
 - `docs/extensions/sku-computed-pricing-strategy.md`
 - `docs/diagrams/sku-pricing-flow.md`
 - `docs/diagrams/sku-pricing-inheritance.md`

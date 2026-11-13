@@ -1,5 +1,7 @@
 # interface、基类与实现映射
 
+完整的类型职责和扩展步骤见 `docs/item-module-design.md`。
+
 | interface | 直接基类 | 具体实现 | 注册标识 | 源码 | 测试 | 文档 |
 | --- | --- | --- | --- | --- | --- | --- |
 | ISkuPricingStrategy | BaseSkuPricingStrategy | SkuComputedPricingStrategy | same_base_fixed_coupon | src/item/pricing/sku-computed-pricing.strategy.ts | test/sku-computed-pricing.strategy.spec.ts | docs/extensions/sku-computed-pricing-strategy.md |

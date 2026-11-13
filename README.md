@@ -31,7 +31,9 @@ curl -s http://127.0.0.1:3000/pricing/quotes/<calculation_id>
 
 金额和费率必须是十进制字符串。`5%` 传入 `"0.05"`，不能传 JSON 数字，也不能传 `5`。
 
-## 计算类
+## 设计
+
+模块的 interface、class、装配 Token 和后续扩展步骤见 [docs/item-module-design.md](docs/item-module-design.md)。
 
 定价功能由 `SkuComputedPricingStrategy` 完成，经 `SkuPricingService` 暴露为 `POST /pricing/quote`。
 
