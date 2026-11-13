@@ -1,15 +1,15 @@
 import { Test } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
-import { AppModule } from '../src/app.module';
-import { ItemModule } from '../src/item/item.module';
-import { SkuComputedPricingStrategy } from '../src/item/pricing/sku-computed-pricing.strategy';
-import { SkuPricingService } from '../src/item/pricing/sku-pricing.service';
-import { InMemorySkuQuoteStore } from '../src/item/pricing/sku-quote.store';
-import { SKU_QUOTE_STORE } from '../src/item/pricing/sku-pricing.tokens';
-import { canonicalRequestHash } from '../src/item/pricing/request-hash';
-import { exampleRequest, withExample } from './quote-fixture';
-import { DuplicateModeStrategy, ReplacementCostStrategy } from './replacement-pricing.strategy';
+import { AppModule } from '../src/app.module.js';
+import { ItemModule } from '../src/item/item.module.js';
+import { SkuComputedPricingStrategy } from '../src/item/pricing/sku-computed-pricing.strategy.js';
+import { SkuPricingService } from '../src/item/pricing/sku-pricing.service.js';
+import { InMemorySkuQuoteStore } from '../src/item/pricing/sku-quote.store.js';
+import { SKU_QUOTE_STORE } from '../src/item/pricing/sku-pricing.tokens.js';
+import { canonicalRequestHash } from '../src/item/pricing/request-hash.js';
+import { exampleRequest, withExample } from './quote-fixture.js';
+import { DuplicateModeStrategy, ReplacementCostStrategy } from './replacement-pricing.strategy.js';
 
 describe('ItemModule assembly', () => {
   let app: INestApplication | undefined;

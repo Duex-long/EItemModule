@@ -8,7 +8,7 @@ import {
   Param,
   Post,
 } from '@nestjs/common';
-import { SkuPricingService } from './sku-pricing.service';
+import { SkuPricingService } from './sku-pricing.service.js';
 
 /**
  * 功能：提供 SKU 定价 HTTP 接口。

@@ -4,6 +4,7 @@
 
 | interface | 直接基类 | 具体实现 | 注册标识 | 源码 | 测试 | 文档 |
 | --- | --- | --- | --- | --- | --- | --- |
+| IGatewayModule<ItemGatewayOptions> | BaseGatewayModule<ItemGatewayOptions>（@personal-gateway/sdk） | ItemGatewayModule | personal.item | src/item/item.gateway-module.ts | test/gateway-integration.spec.ts | docs/extensions/item-gateway-module.md |
 | ISkuPricingStrategy | BaseSkuPricingStrategy | SkuComputedPricingStrategy | same_base_fixed_coupon | src/item/pricing/sku-computed-pricing.strategy.ts | test/sku-computed-pricing.strategy.spec.ts | docs/extensions/sku-computed-pricing-strategy.md |
 | ISkuQuoteStore | 基类不适用 | InMemorySkuQuoteStore、FileSkuQuoteStore | SKU_QUOTE_STORE | src/item/pricing/sku-quote.store.ts | test/file-sku-quote.store.spec.ts、test/item.module.spec.ts | docs/modules/item.md |
 

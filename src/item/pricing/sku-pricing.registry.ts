@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
-import type { ISkuPricingStrategy } from './i-sku-pricing-strategy';
-import { SKU_PRICING_OPTIONS, SKU_PRICING_STRATEGIES, type SkuPricingOptions } from './sku-pricing.tokens';
+import type { ISkuPricingStrategy } from './i-sku-pricing-strategy.js';
+import { SKU_PRICING_OPTIONS, SKU_PRICING_STRATEGIES, type SkuPricingOptions } from './sku-pricing.tokens.js';
 
 /**
  * 功能：按 mode 选择定价策略，并在启动时拒绝重复注册和缺失的必需模式。

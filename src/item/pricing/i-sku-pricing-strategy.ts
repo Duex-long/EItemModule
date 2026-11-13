@@ -1,4 +1,4 @@
-import type { PricingComputation, SkuPricingDraft } from './sku-pricing.types';
+import type { PricingComputation, SkuPricingDraft } from './sku-pricing.types.js';
 
 /**
  * 输入：一个订单测算场景的已解析草稿。金额是十进制数，null 表示缺项。

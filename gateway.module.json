@@ -1,0 +1,18 @@
+{
+  "manifestVersion": 1,
+  "pluginApiVersion": 1,
+  "id": "personal.item",
+  "packageName": "@personal-gateway/module-item",
+  "version": "1.0.0",
+  "compatibility": {
+    "sdk": "^1.0.0",
+    "gateway": ">=0.1.0 <0.2.0"
+  },
+  "providesServices": [{ "key": "item.pricing", "apiVersion": 1 }],
+  "mayRequireServices": [],
+  "lifecycle": true,
+  "consumesExtensions": [],
+  "contributesExtensions": [],
+  "stages": [],
+  "observers": []
+}

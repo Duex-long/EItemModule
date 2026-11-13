@@ -1,32 +1,56 @@
 {
-  "name": "e-item-module",
+  "name": "@personal-gateway/module-item",
   "version": "1.0.0",
-  "description": "商品模块：SKU 定价计算服务（SKU-PRICING-R1）",
-  "private": true,
-  "main": "dist/main.js",
+  "description": "商品模块：在网关进程中提供 SKU 定价服务 item.pricing",
+  "type": "module",
+  "license": "UNLICENSED",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./manifest.json": "./gateway.module.json",
+    "./config.schema.json": "./config.schema.json"
+  },
+  "files": [
+    "dist",
+    "gateway.module.json",
+    "config.schema.json",
+    "examples",
+    "docs"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build:sdk": "tsc -p packages/sdk/tsconfig.json",
+    "build": "npm run build:sdk && tsc -p tsconfig.build.json",
     "start": "node dist/main.js",
-    "typecheck": "tsc -p tsconfig.spec.json --noEmit",
-    "test": "jest --config jest.config.cjs --runInBand"
+    "typecheck": "npm run build:sdk && tsc -p tsconfig.spec.json --noEmit",
+    "test": "npm run build:sdk && node --experimental-vm-modules ./node_modules/jest/bin/jest.js --config jest.config.cjs --runInBand",
+    "check:package": "npm run build && node scripts/check-package-entry.mjs"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24.22.1 <25"
   },
   "dependencies": {
+    "decimal.js": "^10.6.0",
+    "reflect-metadata": "^0.2.2"
+  },
+  "peerDependencies": {
+    "@personal-gateway/sdk": "^1.0.0",
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0"
+  },
+  "devDependencies": {
     "@nestjs/common": "^11.1.6",
     "@nestjs/core": "^11.1.6",
     "@nestjs/platform-express": "^11.1.6",
-    "decimal.js": "^10.6.0",
-    "reflect-metadata": "^0.2.2",
-    "rxjs": "^7.8.2"
-  },
-  "devDependencies": {
     "@nestjs/testing": "^11.1.6",
+    "@personal-gateway/sdk": "file:packages/sdk",
     "@types/jest": "^30.0.0",
     "@types/node": "^26.6.6",
     "@types/supertest": "^7.2.1",
     "jest": "^30.5.2",
+    "rxjs": "^7.8.2",
     "supertest": "^7.3.2",
     "ts-jest": "^29.4.15",
     "typescript": "^5.9.3"

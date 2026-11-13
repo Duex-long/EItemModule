@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { BaseSkuPricingStrategy } from '../src/item/pricing/base-sku-pricing-strategy';
-import { emptyComputation } from '../src/item/pricing/pricing-result';
-import type { PricingComputation, SkuPricingDraft } from '../src/item/pricing/sku-pricing.types';
+import { BaseSkuPricingStrategy } from '../src/item/pricing/base-sku-pricing-strategy.js';
+import { emptyComputation } from '../src/item/pricing/pricing-result.js';
+import type { PricingComputation, SkuPricingDraft } from '../src/item/pricing/sku-pricing.types.js';
 
 /** 测试装配用的替换策略，不进入默认生产注册。 */
 @Injectable()

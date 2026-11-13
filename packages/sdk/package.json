@@ -1,0 +1,21 @@
+{
+  "name": "@personal-gateway/sdk",
+  "version": "1.0.0",
+  "description": "个人服务网关模块协议。当前只包含模块装配所需的公共身份、清单校验和服务目录。",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "engines": {
+    "node": ">=24.22.1 <25"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^11.0.0"
+  },
+  "devDependencies": {}
+}

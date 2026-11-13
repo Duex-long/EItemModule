@@ -1,8 +1,8 @@
-import { mkdtempSync } from 'fs';
+import { existsSync, mkdtempSync } from 'fs';
 import { tmpdir } from 'os';
 import { join } from 'path';
-import { FileSkuQuoteStore } from '../src/item/pricing/sku-quote.store';
-import type { SkuQuoteResponse, StoredQuote } from '../src/item/pricing/sku-pricing.types';
+import { FileSkuQuoteStore } from '../src/item/pricing/sku-quote.store.js';
+import type { SkuQuoteResponse, StoredQuote } from '../src/item/pricing/sku-pricing.types.js';
 
 function record(id: string, hash: string): StoredQuote {
   const response = {
@@ -39,18 +39,32 @@ describe('FileSkuQuoteStore', () => {
     expect(() => new FileSkuQuoteStore('   ')).toThrow('SKU 报价存储路径不能为空');
   });
 
-  it('appends history and reloads it without replacing the first record', () => {
+  it('does not open the quote file until start', () => {
     const directory = mkdtempSync(join(tmpdir(), 'sku-quote-'));
     const path = join(directory, 'nested', 'quotes.jsonl');
     const store = new FileSkuQuoteStore(path);
+    expect(existsSync(path)).toBe(false);
+    expect(() => store.append(record('early', 'hash-early'))).toThrow('报价存储尚未启动');
+  });
+
+  it('appends history and reloads it without replacing the first record', async () => {
+    const directory = mkdtempSync(join(tmpdir(), 'sku-quote-'));
+    const path = join(directory, 'nested', 'quotes.jsonl');
+    const store = new FileSkuQuoteStore(path);
+    await store.start();
     store.append(record('first', 'hash-1'));
     expect(() => store.append(record('other', 'hash-1'))).toThrow('拒绝覆盖');
+    await store.stop();
+    expect(() => store.findById('first')).toThrow('报价存储尚未启动');
 
     const reloaded = new FileSkuQuoteStore(path);
+    await reloaded.start();
     expect(reloaded.findById('first')?.response.minimum_list_price).toBe('9.48');
     reloaded.append(record('second', 'hash-2'));
+    await reloaded.start();
 
     const again = new FileSkuQuoteStore(path);
+    await again.start();
     expect(again.findById('first')?.response.scenario_id).toBe('first');
     expect(again.findById('second')?.response.scenario_id).toBe('second');
     expect(again.findByHash('hash-1')?.calculationId).toBe('first');

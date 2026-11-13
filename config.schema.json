@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "personal.item.config",
+  "title": "personal.item options",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "quoteStore": {
+      "enum": ["memory", "file"],
+      "default": "memory"
+    },
+    "quoteStorePath": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requiredModes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true,
+      "default": ["same_base_fixed_coupon"]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "quoteStore": { "const": "file" }
+        },
+        "required": ["quoteStore"]
+      },
+      "then": {
+        "required": ["quoteStorePath"]
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
-import { parseDecimalString, type Decimal } from './decimal-money';
-import { emptyComputation } from './pricing-result';
+import { parseDecimalString, type Decimal } from './decimal-money.js';
+import { emptyComputation } from './pricing-result.js';
 import type {
   FeeDraft,
   PricingComputation,
@@ -7,7 +7,7 @@ import type {
   PurchaseMappingDraft,
   ShippingParcelDraft,
   SkuPricingDraft,
-} from './sku-pricing.types';
+} from './sku-pricing.types.js';
 
 export type ParseResult =
   | { ok: true; draft: SkuPricingDraft }

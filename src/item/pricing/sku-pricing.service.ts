@@ -1,14 +1,14 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { randomUUID } from 'crypto';
-import { FORMULA_VERSION } from './decimal-money';
-import { parseQuoteRequest } from './parse-quote-request';
-import { preliminaryDecision } from './pricing-precheck';
-import { emptyComputation } from './pricing-result';
-import { canonicalRequestHash } from './request-hash';
-import type { ISkuQuoteStore } from './sku-quote.store';
-import { SkuPricingRegistry } from './sku-pricing.registry';
-import { SKU_QUOTE_STORE } from './sku-pricing.tokens';
-import type { PricingComputation, SkuQuoteResponse } from './sku-pricing.types';
+import { FORMULA_VERSION } from './decimal-money.js';
+import { parseQuoteRequest } from './parse-quote-request.js';
+import { preliminaryDecision } from './pricing-precheck.js';
+import { emptyComputation } from './pricing-result.js';
+import { canonicalRequestHash } from './request-hash.js';
+import type { ISkuQuoteStore } from './sku-quote.store.js';
+import { SkuPricingRegistry } from './sku-pricing.registry.js';
+import { SKU_QUOTE_STORE } from './sku-pricing.tokens.js';
+import type { PricingComputation, SkuQuoteResponse } from './sku-pricing.types.js';
 
 /**
  * 功能：接收报价请求，选择定价策略，保存计算结果并复用相同输入。

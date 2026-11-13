@@ -1,5 +1,5 @@
-import { Decimal, isPositive } from './decimal-money';
-import type { ProcurementLineDraft } from './sku-pricing.types';
+import { Decimal, isPositive } from './decimal-money.js';
+import type { ProcurementLineDraft } from './sku-pricing.types.js';
 
 export interface ProcurementQuantityOk {
   ok: true;

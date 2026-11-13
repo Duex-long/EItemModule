@@ -1,0 +1,10 @@
+{
+  "modules": {
+    "personal.item": {
+      "enabled": true,
+      "options": {
+        "quoteStore": "memory"
+      }
+    }
+  }
+}

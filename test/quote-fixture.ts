@@ -1,8 +1,11 @@
 import { readFileSync } from 'fs';
-import { join } from 'path';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
+
+const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 export function exampleRequest(): Record<string, unknown> {
-  const path = join(__dirname, '..', 'examples', 'quote.example.json');
+  const path = join(root, 'examples', 'quote.example.json');
   return JSON.parse(readFileSync(path, 'utf8')) as Record<string, unknown>;
 }
 

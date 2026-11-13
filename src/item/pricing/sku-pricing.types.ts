@@ -1,4 +1,4 @@
-import type { Decimal } from './decimal-money';
+import type { Decimal } from './decimal-money.js';
 
 export const CALCULATION_STATUSES = [
   'calculated',
@@ -159,7 +159,7 @@ export interface PricingComputation {
 }
 
 export interface SkuQuoteResponse extends PricingComputation {
-  formula_version: typeof import('./decimal-money').FORMULA_VERSION;
+  formula_version: typeof import('./decimal-money.js').FORMULA_VERSION;
   calculation_id: string;
   publish_authorized: false;
   reused: boolean;

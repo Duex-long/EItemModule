@@ -5,6 +5,7 @@
     "noEmit": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
+    "isolatedModules": true,
     "types": ["node", "jest"]
   },
   "include": ["src/**/*", "test/**/*"]

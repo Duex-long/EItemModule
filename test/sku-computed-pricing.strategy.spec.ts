@@ -1,12 +1,12 @@
 import { Test } from '@nestjs/testing';
-import { Decimal } from '../src/item/pricing/decimal-money';
-import { evaluateProcurementLine } from '../src/item/pricing/procurement-quantity';
-import { BaseSkuPricingStrategy } from '../src/item/pricing/base-sku-pricing-strategy';
-import { SkuComputedPricingStrategy } from '../src/item/pricing/sku-computed-pricing.strategy';
-import { ItemModule } from '../src/item/item.module';
-import { SkuPricingService } from '../src/item/pricing/sku-pricing.service';
-import type { ProcurementLineDraft } from '../src/item/pricing/sku-pricing.types';
-import { exampleRequest, withExample } from './quote-fixture';
+import { Decimal } from '../src/item/pricing/decimal-money.js';
+import { evaluateProcurementLine } from '../src/item/pricing/procurement-quantity.js';
+import { BaseSkuPricingStrategy } from '../src/item/pricing/base-sku-pricing-strategy.js';
+import { SkuComputedPricingStrategy } from '../src/item/pricing/sku-computed-pricing.strategy.js';
+import { ItemModule } from '../src/item/item.module.js';
+import { SkuPricingService } from '../src/item/pricing/sku-pricing.service.js';
+import type { ProcurementLineDraft } from '../src/item/pricing/sku-pricing.types.js';
+import { exampleRequest, withExample } from './quote-fixture.js';
 
 async function quote(body: Record<string, unknown>) {
   const moduleRef = await Test.createTestingModule({

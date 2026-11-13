@@ -1,5 +1,5 @@
 import { createHash } from 'crypto';
-import { parseDecimalString } from './decimal-money';
+import { parseDecimalString } from './decimal-money.js';
 
 const DECIMAL_KEYS = new Set([
   'sales_quantity',

@@ -1,4 +1,4 @@
-import type { PricingComputation, PricingDetail } from './sku-pricing.types';
+import type { PricingComputation, PricingDetail } from './sku-pricing.types.js';
 
 export function emptyComputation(
   partial: Pick<PricingComputation, 'calculation_status' | 'scenario_id'> &

@@ -10,17 +10,17 @@ import {
   SAME_BASE_FIXED_COUPON_MODE,
   sameMoney,
   SUPPORTED_CURRENCY,
-} from './decimal-money';
-import { BaseSkuPricingStrategy } from './base-sku-pricing-strategy';
-import { evaluateProcurementLine } from './procurement-quantity';
-import { blankDetail, emptyComputation } from './pricing-result';
+} from './decimal-money.js';
+import { BaseSkuPricingStrategy } from './base-sku-pricing-strategy.js';
+import { evaluateProcurementLine } from './procurement-quantity.js';
+import { blankDetail, emptyComputation } from './pricing-result.js';
 import type {
   FeeDraft,
   FeeRounding,
   PricingComputation,
   ReadySkuPricingDraft,
   SkuPricingDraft,
-} from './sku-pricing.types';
+} from './sku-pricing.types.js';
 
 const PASSING_PROCUREMENT = new Set(['passed', 'passed_for_example']);
 const KNOWN_EVIDENCE = new Set(['verified', 'example_assumptions', 'assumption', 'expired', 'scenario_mismatch']);

@@ -31,6 +31,10 @@ curl -s http://127.0.0.1:3000/pricing/quotes/<calculation_id>
 
 金额和费率必须是十进制字符串。`5%` 传入 `"0.05"`，不能传 JSON 数字，也不能传 `5`。
 
+## 接入网关
+
+包名是 `@personal-gateway/module-item`，模块 id 是 `personal.item`。网关通过 `@personal-gateway/sdk` 加载入口里的 `gatewayModule`，并用服务 `item.pricing` 调用定价。步骤、清单和当前还不能代跑的宿主检查见 [docs/gateway-integration.md](docs/gateway-integration.md)。
+
 ## 设计
 
 模块的 interface、class、装配 Token 和后续扩展步骤见 [docs/item-module-design.md](docs/item-module-design.md)。

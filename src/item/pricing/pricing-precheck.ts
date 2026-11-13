@@ -1,5 +1,5 @@
-import { emptyComputation } from './pricing-result';
-import type { PricingComputation, SkuPricingDraft } from './sku-pricing.types';
+import { emptyComputation } from './pricing-result.js';
+import type { PricingComputation, SkuPricingDraft } from './sku-pricing.types.js';
 
 const EXPLICIT_PROCUREMENT_FAILURES = new Set(['failed', 'invalid', 'rejected']);
 

@@ -1,5 +1,5 @@
 import { type DynamicModule, Module } from '@nestjs/common';
-import { ItemModule } from './item/item.module';
+import { ItemModule } from './item/item.module.js';
 
 @Module({})
 export class AppModule {

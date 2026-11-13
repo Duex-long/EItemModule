@@ -8,6 +8,8 @@
 
 本文说明商品模块里每个 interface 和 class 的位置、职责和扩展方式。改定价规则、换存储或加接口时，先看第 2 节判断该动哪一层，再按第 6 节接入。
 
+网关进程通过 `ItemGatewayModule` 加载本模块。接入步骤见 `docs/gateway-integration.md`。`IGatewayModule` 和 `BaseGatewayModule` 来自 `@personal-gateway/sdk`，不要在商品模块里再复制一份。
+
 ## 1. 模块边界
 
 ItemModule 只做一件事：对一个已经取好数的订单测算场景做确定性计价，并通过 HTTP 返回结果。
